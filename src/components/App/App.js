@@ -14,6 +14,14 @@ class App extends Component {
     }   
   }
 
+  // runs once, after the first render
+  //DOES THIS KEEP IT FROM REPEATING THROUGH THE LOOP (UNENDINNG LOOP)???????
+  componentDidMount() {
+    console.log('APP MOUNTED ON DOM')
+    // MAKE AN INITIAL GET REQUEST
+    this.getPictures();
+
+  }
 
   //GET data 
   //Use axios to retrieve (GET) data from to /gallery and store it in App.js. 
@@ -24,6 +32,7 @@ class App extends Component {
     }).then((response) => {
       //with axios our rows are on .data of the response```
       console.log(response.data);
+      console.log('in GET');
       //save in state!
       this.setState({
         galleryList : response.data
@@ -32,6 +41,8 @@ class App extends Component {
       alert(err);
     })
   }
+
+  //TO DO: Create handleLike function
 
   render() {
     return (
@@ -42,7 +53,10 @@ class App extends Component {
         <br/>
         <p>Gallery goes here</p>
         {/* <img src="images/goat_small.jpg"/> */}
-        <GalleryList />
+        <GalleryList galleryList={this.state.galleryList}
+          // listOfPictures={this.state.galleryList}
+          // handleLike={this.handleLike}
+        />
 
       </div>
     );

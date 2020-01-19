@@ -31,8 +31,7 @@ class App extends Component {
       url: '/gallery'
     }).then((response) => {
       //with axios our rows are on .data of the response```
-      console.log(response.data);
-      console.log('in GET');
+      console.log('in GET:', response.data);
       //save in state!
       this.setState({
         galleryList : response.data
@@ -42,7 +41,17 @@ class App extends Component {
     })
   }
 
-  //TO DO: Create handleLike function
+  //Create handleLike function
+  //PUT request
+  handleLike = (id) => {
+    console.log('clicked like!');
+    axios.put(`/gallery/like/${id}`,this.state.galleryList)
+      .then((response) => {
+        this.getPictures();
+      }).catch((err) => {
+        alert(err)
+      })
+  }
 
   render() {
     return (
@@ -53,9 +62,7 @@ class App extends Component {
         <br/>
         <p>Gallery goes here</p>
         {/* <img src="images/goat_small.jpg"/> */}
-        <GalleryList galleryList={this.state.galleryList}
-          // handleLike={this.handleLike}
-        />
+        <GalleryList galleryList={this.state.galleryList} handleLike={this.handleLike}/>
 
       </div>
     );

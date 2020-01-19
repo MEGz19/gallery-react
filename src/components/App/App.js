@@ -54,7 +54,6 @@ class App extends Component {
         <p>Gallery goes here</p>
         {/* <img src="images/goat_small.jpg"/> */}
         <GalleryList galleryList={this.state.galleryList}
-          // listOfPictures={this.state.galleryList}
           // handleLike={this.handleLike}
         />
 

@@ -4,3 +4,8 @@ img {
     padding: 20px;
     object-fit: contain;
 }
+
+/* POSSIBLE 90 DEGREE ROTATION FORMATTING: */
+/* transform: rotate (90deg); */
+/* This will rotate all images 90 degrees - need to find a way to
+target first three images*/

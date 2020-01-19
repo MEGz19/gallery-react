@@ -3,21 +3,21 @@ import './GalleryItem.css';
 
 
 class GalleryItem extends Component {
-    // state = {
-    //     isVisible : true 
-    //   }
-    
-    //   handleToggle = () => {
-    //     console.log('clicked image');
-    //     this.setState({
-    //       isVisible : !this.state.isVisible
-    //     })
-    //   }
+    state = {
+        isToggled : true 
+      }
+
+      handleToggle = () => {
+        console.log('clicked image');
+        this.setState({
+          isToggled : !this.state.isToggled
+        })
+      }
 
     render() {
         return (
             <>
-                <img src={this.props.galleryItem.path} alt="HTML5" />
+                <img src={this.props.galleryItem.path} onClick= {(this.handleToggle)}/>
                 <>{this.props.galleryItem.likes} people like my picture
                     <button onClick={() => this.props.handleLike(this.props.galleryItem.id)}>Like!</button>
                 </>
@@ -27,3 +27,9 @@ class GalleryItem extends Component {
 }
 
 export default GalleryItem;
+
+
+{/* <>
+    <button onClick={this.handleHide}>TOGGLE THIS SONG</button>
+    {songJSX}
+</> */}

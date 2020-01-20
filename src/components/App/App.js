@@ -3,6 +3,15 @@ import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
 
+import Home from '../Home/Home.js'
+import About from '../About/About.js'
+
+import {
+    HashRouter as Router,
+    Route,
+    Link,
+} from 'react-router-dom'
+
 
 class App extends Component {
   //Create state
@@ -55,6 +64,8 @@ class App extends Component {
 
   render() {
     return (
+      
+
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
@@ -70,3 +81,5 @@ class App extends Component {
 }
 
 export default App;
+
+

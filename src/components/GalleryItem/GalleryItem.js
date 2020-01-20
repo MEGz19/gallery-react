@@ -4,28 +4,28 @@ import './GalleryItem.css';
 
 class GalleryItem extends Component {
     state = {
-        isToggled : true 
-      }
+        isToggled: true
+    }
 
-      handleToggle = () => {
+    handleToggle = () => {
         console.log('clicked image');
         this.setState({
-          isToggled : !this.state.isToggled
+            isToggled: !this.state.isToggled
         })
-      }
+    }
 
     render() {
         let conditionalPic;
-        if(this.state.isToggled === true) {
-            conditionalPic = 
-            <img src={this.props.galleryItem.path} onClick= {this.handleToggle} alt=''/>
+        if (this.state.isToggled === true) {
+            conditionalPic =
+                <img src={this.props.galleryItem.path} onClick={this.handleToggle} alt='' />
         } else {
             conditionalPic = (
-                <p onClick= {this.handleToggle}> 
+                <p onClick={this.handleToggle}>
                     {this.props.galleryItem.description}</p>
             )
         }
-        
+
 
 
         return (

@@ -15,9 +15,23 @@ class GalleryItem extends Component {
       }
 
     render() {
+        let conditionalPic;
+        if(this.state.isToggled === true) {
+            conditionalPic = 
+            <img src={this.props.galleryItem.path} onClick= {this.handleToggle} alt=''/>
+        } else {
+            conditionalPic = (
+                <p onClick= {this.handleToggle}> 
+                    {this.props.galleryItem.description}</p>
+            )
+        }
+        
+
+
         return (
             <>
-                <img src={this.props.galleryItem.path} onClick= {(this.handleToggle)}/>
+                {conditionalPic}
+                {/* <img src={this.props.galleryItem.path} onClick= {(this.handleToggle)}/> */}
                 <>{this.props.galleryItem.likes} people like my picture
                     <button onClick={() => this.props.handleLike(this.props.galleryItem.id)}>Like!</button>
                 </>

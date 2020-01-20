@@ -5,6 +5,10 @@ img {
     object-fit: contain;
 }
 
+.pictureContainer {
+    display: inline-block;
+}
+
 /* POSSIBLE 90 DEGREE ROTATION FORMATTING: */
 /* transform: rotate (90deg); */
 /* This will rotate all images 90 degrees - need to find a way to

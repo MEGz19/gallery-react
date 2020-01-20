@@ -29,13 +29,13 @@ class GalleryItem extends Component {
 
 
         return (
-            <>
+            <div className='pictureContainer'>
                 {conditionalPic}
                 {/* <img src={this.props.galleryItem.path} onClick= {(this.handleToggle)}/> */}
                 <>{this.props.galleryItem.likes} people like my picture
                     <button onClick={() => this.props.handleLike(this.props.galleryItem.id)}>Like!</button>
                 </>
-            </>
+            </div>
         )
     }
 }
